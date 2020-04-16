@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@using CRUDelicious.Models
+@model List<Dish>
+
+<h1>Welcome to CRUDelicious</h1>
+
+<h2>Check out some recent dishes!</h2>
+
+@foreach(Dish dish in Model)
+{
+    <p><a asp-action="SingleView" asp-route-id="@dish.DishId">@dish.Name</a> by @dish.Chef</p>
+}
+<br>
+<a class="btn btn-success" href="/new">Add a Dish</a>

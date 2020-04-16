@@ -1,0 +1,18 @@
+@using CRUDelicious.Models;
+@model Dish;
+
+<a class="btn btn-info" asp-action="Index">Back to Home</a>
+<br>
+
+<h1>@Model.Name</h1>
+<h2>@Model.Chef</h2>
+
+<p>@Model.Description</p>
+
+<p>Calories: @Model.Calories</p>
+<p>Tastiness: @Model.Tastiness</p>
+
+<div class="row col-6 justify-content-around">
+    <a asp-action="Edit" asp-route-id=@Model.DishId class="col-2 btn btn-warning">Edit</a>
+    <a asp-action="Delete" asp-route-id=@Model.DishId class="col-2 btn btn-danger">Delete</a>
+</div>
